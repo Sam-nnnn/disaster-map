@@ -26,7 +26,7 @@ export function TaskTimeline({ history }: TaskTimelineProps) {
                     <div key={index} className="relative">
                         {/* Timeline Circle */}
                         <div className={`absolute -left-8 top-1 w-6 h-6 rounded-full border-4 bg-white dark:bg-slate-900 z-10 
-              ${index === 0 ? 'border-orange-500 scale-110' : 'border-slate-200 dark:border-slate-700'}`}
+              ${index === 0 ? 'border-blue-500 scale-100' : 'border-slate-200 dark:border-slate-700'}`}
                         />
 
                         {/* Content */}

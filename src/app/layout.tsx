@@ -1,16 +1,20 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Noto_Sans_TC, Noto_Sans_Mono } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// 主字體 Noto Sans TC
+const notoSans = Noto_Sans_TC({
+  variable: "--font-noto-sans",
   subsets: ["latin"],
+  weight: ["400","700"], // 可選字重
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+// 等寬字體 Noto Mono
+const notoMono = Noto_Sans_Mono({
+  variable: "--font-noto-mono",
   subsets: ["latin"],
+  weight: ["400","700"],
 });
 
 export const metadata: Metadata = {
@@ -26,7 +30,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${notoSans.variable} ${notoMono.variable} antialiased`}
       >
         <Providers>
           {children}

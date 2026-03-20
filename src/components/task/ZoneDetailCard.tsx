@@ -1,7 +1,7 @@
 "use client";
 
 import { useTaskStore } from "@/store/useTaskStore";
-import { X, Info, LayoutPanelTop, MapPin, Share2 } from "lucide-react";
+import { X, Info, LayoutPanelTop, MapPin, Share2, Pin } from "lucide-react";
 import { useMemo } from "react";
 
 export function ZoneDetailCard() {
@@ -19,12 +19,12 @@ export function ZoneDetailCard() {
 
                 <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
                     <div className="flex items-center gap-2">
-                        <div className="p-2 rounded-xl bg-white dark:bg-slate-800 shadow-sm border border-slate-100 dark:border-slate-700">
-                            <LayoutPanelTop className="w-5 h-5" style={{ color: zone.color }} />
+                        <div className="p-2 rounded-xl bg-white dark:bg-slate-800 border border-slate-100 dark:border-slate-700">
+                            <Pin className="w-5 h-5" style={{ color: zone.color }} />
                         </div>
                         <div>
                             <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100">{zone.name}</h2>
-                            <span className="text-[10px] font-bold uppercase tracking-widest text-slate-400">區域資訊</span>
+
                         </div>
                     </div>
                     <button

@@ -187,7 +187,7 @@ export function FilterDropdown({
                     <button 
                       onClick={handleCustomSubmit}
                       disabled={!tempDateTS.start}
-                      className="flex-1 py-2.5 rounded-xl bg-[#1a1a1b] dark:bg-slate-100 text-white dark:text-slate-900 text-[13px] font-bold shadow-xl shadow-slate-200 dark:shadow-none transition-all active:scale-95 disabled:opacity-50"
+                      className="flex-1 py-2.5 rounded-xl border border-slate-200 dark:bg-slate-100 text-slate-600 dark:text-slate-900 text-[13px] font-bold transition-all active:scale-95 disabled:opacity-50"
                     >
                       套用
                     </button>

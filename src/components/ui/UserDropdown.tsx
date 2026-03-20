@@ -81,9 +81,9 @@ export function UserDropdown() {
     <div className="relative" ref={dropdownRef}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-11 h-11 rounded-full bg-white dark:bg-slate-800 shadow-[0_2px_8px_rgba(0,0,0,0.06)] border border-slate-100 dark:border-slate-700 flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors pointer-events-auto"
+        className="w-13 h-13 rounded-full bg-slate-200 dark:bg-slate-800 shadow-[0_2px_8px_rgba(0,0,0,0.06)] flex items-center justify-center text-slate-400 dark:text-slate-500 hover:text-slate-600 dark:hover:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700 transition-colors pointer-events-auto  shadow-[0_2px_15px_rgba(0,0,0,0.06)]"
       >
-        <User className="w-5 h-5" />
+        <User className="w-6 h-6 text-slate-400" />
       </button>
 
       <AnimatePresence>
@@ -109,7 +109,7 @@ export function UserDropdown() {
                   className="flex items-center justify-between w-full px-5 py-3.5 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200 outline-none"
                 >
                   <div className="flex items-center gap-3">
-                    <User className="w-5 h-5 opacity-70" />
+                    <User className="w-5 h-5 opacity-80 text-slate-600" />
                     <span className="text-[15px] font-medium tracking-wide">切換角色</span>
                   </div>
                   <ChevronRight className="w-4 h-4 opacity-50" />
@@ -121,7 +121,7 @@ export function UserDropdown() {
                   onClick={handleReportTask}
                   className="flex items-center gap-3 w-full px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200 outline-none"
                 >
-                  <AlertTriangle className="w-5 h-5 opacity-80 text-orange-500" />
+                  <AlertTriangle className="w-5 h-5 opacity-80 text-slate-600" />
                   <span className="text-[15px] font-medium tracking-wide">回報任務</span>
                 </button>
 
@@ -129,7 +129,7 @@ export function UserDropdown() {
                   onClick={() => { setViewMode(viewMode === 'map' ? 'board' : 'map'); setIsOpen(false); }}
                   className="flex items-center gap-3 w-full px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200 outline-none"
                 >
-                  <Monitor className="w-5 h-5 opacity-70 text-blue-500" />
+                  <Monitor className="w-5 h-5 opacity-80 text-slate-600" />
                   <span className="text-[15px] font-medium tracking-wide">
                     {viewMode === 'map' ? '切換看板模式' : '切換地圖模式'}
                   </span>
@@ -140,7 +140,7 @@ export function UserDropdown() {
                   className="flex items-center justify-between w-full px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors text-slate-700 dark:text-slate-200 outline-none"
                 >
                   <div className="flex items-center gap-3">
-                    {currentTheme === 'dark' ? <Moon className="w-5 h-5 opacity-70 text-indigo-400" /> : <Sun className="w-5 h-5 opacity-70 text-yellow-500" />}
+                    {currentTheme === 'dark' ? <Moon className="w-5 h-5 opacity-60 text-slate-500" /> : <Sun className="w-5 h-5 opacity-80 text-slate-600" />}
                     <span className="text-[15px] font-medium tracking-wide">深色主題</span>
                   </div>
                   <div className={`w-10 h-6 flex items-center bg-slate-200 dark:bg-indigo-500 rounded-full p-1 transition-colors duration-300`}>
@@ -153,12 +153,12 @@ export function UserDropdown() {
                 <div className="px-5 py-2">
                   <button
                     onClick={handleLoginToggle}
-                    className="w-full py-2.5 rounded-xl bg-slate-100 dark:bg-slate-800 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2 text-[14px] font-bold text-slate-800 dark:text-slate-200 shadow-sm"
+                    className="w-full py-2.5 rounded-xl hover:bg-slate-200 border border-slate-300 dark:hover:bg-slate-700 transition-colors flex items-center justify-center gap-2 text-[14px] font-bold text-slate-800 dark:text-slate-200"
                   >
                     {currentUserRole ? (
-                      <><LogOut className="w-4 h-4" /> 登出</>
+                      <><LogOut className="w-4 h-4" /> 登出 </>
                     ) : (
-                      <><LogIn className="w-4 h-4" /> 登入</>
+                      <><LogIn className="w-4 h-4" /> 登入 </>
                     )}
                   </button>
                   <p className="text-[11px] text-center text-slate-400 dark:text-slate-500 mt-2.5 font-medium">
