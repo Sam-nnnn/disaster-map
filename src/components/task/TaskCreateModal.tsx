@@ -43,7 +43,7 @@ export function TaskCreateModal() {
   return (
     <div className="fixed inset-0 z-[2000] flex items-center justify-center bg-black/20 pointer-events-auto">
       {/* Modal */}
-      <div className="relative w-full h-full sm:h-auto sm:max-w-md bg-white dark:bg-slate-900 rounded-none sm:rounded-3xl shadow-2xl overflow-auto">
+      <div className="relative w-full h-full sm:h-auto sm:max-w-md bg-white dark:bg-slate-900 rounded-none sm:rounded-2xl shadow-2xl overflow-auto">
         {/* Header */}
         <div className="flex items-center justify-between p-4 border-b border-slate-200 dark:border-slate-800 sticky top-0 bg-white dark:bg-slate-900 z-10">
           <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100">
@@ -119,7 +119,7 @@ export function TaskCreateModal() {
             <label className="block text-sm font-medium text-slate-700 dark:text-slate-300 mb-1">
               位置
             </label>
-            <p className="mt-1 text-xs text-slate-400 mb-1">
+            <p className="mt-1 text-xs text-slate-400 mb-3">
               輸入任務地址或移動座標。
             </p>
             <input
@@ -130,7 +130,7 @@ export function TaskCreateModal() {
             />
 
             {/* 地圖示意區塊 */}
-            <div className="mt-2 h-52 w-full bg-[url('/miniMapMock.png')] bg-cover bg-center rounded-xl relative">
+            <div className="mt-3 h-52 w-full border border-slate-100 dark:border-slate-700 bg-[url('/miniMapMock.png')] bg-cover bg-center rounded-xl relative">
               {/* Pin 完全置中 */}
               <div className="absolute inset-0 flex items-center justify-center text-white text-2xl">
                 📍
