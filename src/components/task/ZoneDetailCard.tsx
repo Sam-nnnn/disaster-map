@@ -12,10 +12,14 @@ export function ZoneDetailCard() {
     if (!zone) return null;
 
     return (
-        <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center sm:justify-end sm:pr-4 pointer-events-none bg-black/20 sm:bg-transparent backdrop-blur-sm sm:backdrop-blur-none transition-all">
+        <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center sm:justify-end sm:pr-4 pointer-events-none sm:bg-transparent transition-all">
             <div
-                className="relative w-full h-[60vh] sm:h-auto sm:max-h-[85vh] sm:w-[380px] bg-white dark:bg-slate-900 sm:rounded-2xl rounded-t-3xl shadow-xl overflow-hidden animate-in slide-in-from-bottom-full sm:slide-in-from-right-8 duration-300 dark:border-slate-800 flex flex-col pointer-events-auto"
+                className="relative w-full h-[50vh] sm:h-auto sm:max-h-[85vh] sm:w-[380px] bg-white dark:bg-slate-900 sm:rounded-2xl rounded-t-3xl shadow-xl overflow-hidden animate-in slide-in-from-bottom-full sm:slide-in-from-right-8 duration-300 dark:border-slate-800 flex flex-col pointer-events-auto"
             >
+                {/* Sheet Handle (mobile only) */}
+                <div className="flex justify-center py-2 md:hidden">
+                    <div className="w-10 h-1.5 bg-slate-300 rounded-full" />
+                </div>
 
                 <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
                     <div className="flex items-center gap-2">

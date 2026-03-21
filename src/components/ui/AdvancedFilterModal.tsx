@@ -111,8 +111,8 @@ export function AdvancedFilterModal() {
   const filteredCount = getFilteredTasks(currentUserRole).length;
 
   return (
-    <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center bg-black/20 pointer-events-auto">
-      <div className="relative w-full max-w-xl bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-5 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200 max-h-[90dvh] flex flex-col">
+    <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center pointer-events-auto">
+      <div className="relative w-full max-w-xl bg-white dark:bg-slate-900 rounded-t-3xl sm:rounded-3xl shadow-2xl overflow-hidden animate-in slide-in-from-bottom-5 sm:slide-in-from-bottom-0 sm:zoom-in-95 duration-200 max-h-[90dvh] flex flex-col">   
         <div className="flex items-center justify-between p-5 border-b border-slate-100 dark:border-slate-800 shrink-0">
           <h2 className="text-xl font-bold text-slate-800 dark:text-slate-100">進階篩選</h2>
           <button 
