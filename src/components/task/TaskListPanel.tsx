@@ -5,6 +5,21 @@ import { useUIStore } from "@/store/useUIStore"; // Added import for useUIStore
 import { useMemo } from "react";
 import { MapPin, X } from "lucide-react";
 
+const TYPE_EMOJI: Record<string, string> = {
+  fire: "🔥",
+  rescue: "🚨",
+  danger: "🚧",
+  people: "👥",
+  inspection: "⛑️",
+  medical: "🚑",
+  supply: "📦",
+  cleanup: "🪏",
+  heavy: "🚜",
+  utility: "🔧",
+  support: "💪",
+  transport: "🛵"
+};
+
 export function TaskListPanel() {
   const { searchQuery, filters, setSelectedTaskId, selectedTaskId, setSearchQuery, setFilters, getFilteredTasks } = useTaskStore();
   const { currentUserRole } = useUIStore();
@@ -47,7 +62,7 @@ export function TaskListPanel() {
                 className="w-full text-left p-3 rounded-xl hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors border border-transparent hover:border-slate-200 dark:hover:border-slate-700 group"
               >
                 <div className="flex items-center gap-2 mb-1">
-                  <span className="text-xl">{task.type === 'fire' ? '🔥' : task.type === 'rescue' ? '🚨' : '📍'}</span>
+                  <span className="text-xl">{TYPE_EMOJI[task.type] || '📍'}</span>
                   <h3 className="font-medium text-slate-800 dark:text-slate-200 line-clamp-1">{task.title}</h3>
                 </div>
                 <p className="text-xs text-slate-500 dark:text-slate-400 line-clamp-2 mb-2">{task.description}</p>

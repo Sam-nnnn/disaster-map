@@ -6,6 +6,22 @@ import { useMemo } from "react";
 import { Task } from "@/types/task";
 import { MapPin } from "lucide-react";
 
+const TYPE_EMOJI: Record<string, string> = {
+  fire: "🔥",
+  rescue: "🚨",
+  danger: "🚧",
+  people: "👥",
+  inspection: "⛑️",
+  medical: "🚑",
+  supply: "📦",
+  cleanup: "🪏",
+  heavy: "🚜",
+  utility: "🔧",
+  support: "💪",
+  transport: "🛵"
+};
+
+
 const TaskCard = ({ task }: { task: Task }) => {
   const { setSelectedTaskId } = useTaskStore();
   return (
@@ -14,7 +30,7 @@ const TaskCard = ({ task }: { task: Task }) => {
       className="bg-white dark:bg-slate-800 p-4 rounded-2xl shadow-[0_2px_10px_rgba(0,0,0,0.04)] dark:shadow-none border border-slate-100 dark:border-slate-700 cursor-pointer hover:border-blue-300 dark:hover:border-blue-700 hover:shadow-md transition-all group"
     >
       <div className="flex items-center gap-2 mb-2">
-        <span className="text-xl">{task.type === 'fire' ? '🔥' : task.type === 'rescue' ? '🚨' : '📍'}</span>
+        <span className="text-xl"> {TYPE_EMOJI[task.type] || '📍'}</span>
         <h3 className="font-bold text-slate-800 dark:text-slate-100 line-clamp-1">{task.title}</h3>
       </div>
       <p className="text-sm text-slate-500 dark:text-slate-400 line-clamp-2 mb-3 leading-relaxed">{task.description}</p>
