@@ -53,8 +53,8 @@ export function TaskListPanel() {
   return (
     <div
       className="
-        fixed inset-0 md:absolute md:top-[280px]
-        left-0 right-0 md:left-4 md:right-auto md:w-80
+        fixed inset-0 md:absolute md:top-[360px]
+        left-0 right-0 md:left-4 md:right-auto md:w-86
         z-[1000]
         flex items-end md:items-start justify-center md:justify-start
         pointer-events-none
@@ -64,7 +64,7 @@ export function TaskListPanel() {
       <div
         className="
           w-full md:w-auto
-          h-[70vh] md:h-auto
+          h-[50vh] md:h-[70vh]
           bg-white dark:bg-slate-900
           rounded-t-3xl md:rounded-2xl
           shadow-xl
