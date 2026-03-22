@@ -14,7 +14,7 @@ export function ZoneDetailCard() {
     return (
         <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center sm:justify-end sm:pr-4 pointer-events-none sm:bg-transparent transition-all">
             <div
-                className="relative w-full h-[50vh] sm:h-auto sm:max-h-[85vh] sm:w-[380px] bg-white dark:bg-slate-900 sm:rounded-2xl rounded-t-3xl shadow-xl overflow-hidden animate-in slide-in-from-bottom-full sm:slide-in-from-right-8 duration-300 dark:border-slate-800 flex flex-col pointer-events-auto"
+                className="relative w-full h-[50vh] sm:h-auto sm:max-h-[85vh] sm:w-[380px] bg-white/80 dark:bg-slate-900/80 backdrop-blur sm:rounded-2xl rounded-t-3xl shadow-xl overflow-hidden animate-in slide-in-from-bottom-full sm:slide-in-from-right-8 duration-300 dark:border-slate-800 flex flex-col pointer-events-auto"
             >
                 {/* Sheet Handle (mobile only) */}
                 <div className="flex justify-center py-2 md:hidden">

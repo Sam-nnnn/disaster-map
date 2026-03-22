@@ -20,14 +20,14 @@ export function AreaSummaryCard() {
   };
 
   return (
-    <div className={`absolute top-[136px] left-4 right-20 md:left-5 md:right-auto z-[1000] pointer-events-auto md:w-full md:max-w-[340px] bg-white/20 border border-white backdrop-blur dark:bg-slate-900/50 dark:border-slate-800/80 backdrop-blur rounded-xl shadow-l transition-all duration-300 overflow-hidden p-2`}>
+    <div className={`absolute top-[136px] left-4 right-20 md:left-5 md:right-auto z-[1000] pointer-events-auto md:w-full md:max-w-[340px] backdrop-blur rounded-xl shadow-l transition-all duration-300 overflow-hidden p-2`}>
       <div
         className="flex items-center justify-between cursor-pointer px-1"
         onClick={() => setIsCollapsed(!isCollapsed)}
       >
         <div className="flex items-center gap-1.5">
           <span className="text-lg">🏛️</span>
-          <h2 className="text-[15px] font-bold text-slate-800 dark:text-slate-100 tracking-wide">台南災害應變中心</h2>
+          <h2 className="text-[15px] font-bold text-slate-800 dark:text-slate-500 tracking-wide">台南災害應變中心</h2>
           <button className="flex items-center gap-1 px-2 py-0.5 rounded-lg bg-red-50 dark:bg-red-500/10 text-red-600 dark:text-red-400 text-[10px] font-bold border border-red-100 dark:border-red-500/20 hover:bg-red-100 dark:hover:bg-red-500/20 transition-colors ml-1">
             <span className="relative flex h-1.5 w-1.5">
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
@@ -45,7 +45,7 @@ export function AreaSummaryCard() {
         className={`transition-all duration-300 ease-in-out origin-top ${isCollapsed ? 'grid-rows-[0fr] opacity-0 mt-0 pointer-events-none' : 'grid-rows-[1fr] opacity-100 mt-2 pointer-events-auto'} grid`}
       >
         <div className="overflow-hidden px-1 pb-1">
-          <p className="text-[11px] text-slate-500 dark:text-slate-200 font-medium tracking-wide mb-3">
+          <p className="text-[11px] text-slate-500 dark:text-slate-500 font-medium tracking-wide mb-3">
             任務總數：{tasks.length} | 以搜救、物資需求為主要任務
           </p>
 
