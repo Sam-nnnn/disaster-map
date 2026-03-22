@@ -105,7 +105,11 @@ export function UserDropdown() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: 10, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute right-0 mt-3 w-[240px] rounded-2xl bg-white dark:bg-slate-900 border border-slate-100 dark:border-slate-800 shadow-xl overflow-hidden z-[9999] flex flex-col"
+            className="
+            absolute right-0 mt-3 w-[240px] rounded-2xl 
+            bg-white dark:bg-slate-900 border
+            border-slate-100 dark:border-slate-800 
+            shadow-xl overflow-hidden z-[9999] flex flex-col"
           >
             {view === 'main' ? (
               <motion.div
@@ -122,7 +126,7 @@ export function UserDropdown() {
                 >
                   <div className="flex items-center gap-3">
                     <User className="w-5 h-5 opacity-80 text-slate-600 dark:text-slate-300" />
-                    <span className="text-[15px] dark:text-slate-300 font-medium">切換角色</span>
+                    <span className="text-[15px] text-slate-700 dark:text-slate-300 font-medium">切換角色</span>
                   </div>
                   <ChevronRight className="w-4 h-4 dark:text-slate-300 opacity-50" />
                 </button>
@@ -134,7 +138,7 @@ export function UserDropdown() {
                   className="flex items-center gap-3 w-full px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800"
                 >
                   <AlertTriangle className="w-5 h-5 opacity-80 text-slate-600 dark:text-slate-300" />
-                  <span className="text-[15px] dark:text-slate-300 font-medium">回報任務</span>
+                  <span className="text-[15px] text-slate-700 dark:text-slate-300 font-medium">回報任務</span>
                 </button>
 
                 <button
@@ -142,7 +146,7 @@ export function UserDropdown() {
                   className="flex items-center gap-3 w-full px-5 py-3 hover:bg-slate-50 dark:hover:bg-slate-800"
                 >
                   <Monitor className="w-5 h-5 opacity-80 text-slate-600 dark:text-slate-300" />
-                  <span className="text-[15px] font-medium dark:text-slate-300">
+                  <span className="text-[15px] font-medium text-slate-700 dark:text-slate-300">
                     {viewMode === 'map' ? '切換看板模式' : '切換地圖模式'}
                   </span>
                 </button>
@@ -155,7 +159,7 @@ export function UserDropdown() {
                     {currentTheme === 'dark'
                       ? <Moon className="w-5 h-5 opacity-60 text-slate-500 dark:text-slate-300" />
                       : <Sun className="w-5 h-5 opacity-80 text-slate-600 dark:text-slate-300" />}
-                    <span className="text-[15px] font-medium dark:text-slate-300">深色主題</span>
+                    <span className="text-[15px] font-medium text-slate-700 dark:text-slate-300">深色主題</span>
                   </div>
                   <div className="w-10 h-6 flex items-center bg-slate-200 dark:bg-blue-500 rounded-full p-1">
                     <div className={`bg-white w-4 h-4 rounded-full shadow-md transform transition-transform ${currentTheme === 'dark' ? 'translate-x-4' : ''}`} />
@@ -167,7 +171,11 @@ export function UserDropdown() {
                 <div className="px-5 py-2">
                   <button
                     onClick={handleLoginToggle}
-                    className="w-full py-2.5 dark:text-slate-300 rounded-xl hover:bg-slate-200 border border-slate-300 dark:hover:bg-slate-700 flex items-center justify-center gap-2 text-[14px] font-bold"
+                    className="
+                    w-full py-2.5 
+                    text-slate-700 dark:text-slate-300 
+                    rounded-xl hover:bg-slate-200 
+                    border border-slate-300 dark:hover:bg-slate-700 flex items-center justify-center gap-2 text-[14px] font-bold"
                   >
                     {isLoggedIn ? (
                       <><LogOut className="w-4 h-4 dark:text-slate-300" /> 登出</>
@@ -192,9 +200,9 @@ export function UserDropdown() {
               >
                 <div className="flex items-center gap-2 p-3 border-b border-slate-100 dark:border-slate-800">
                   <button onClick={() => setView('main')} className="p-1 rounded-full hover:bg-slate-100 dark:hover:bg-slate-800">
-                    <ChevronLeft className="w-5 h-5" />
+                    <ChevronLeft className="w-5 h-5 text-slate-700 dark:text-slate-300" />
                   </button>
-                  <span className="text-sm font-bold">選擇您的角色</span>
+                  <span className="text-sm font-bold text-slate-700 dark:text-slate-300">選擇您的角色</span>
                 </div>
 
                 <div className="overflow-y-auto py-2">
@@ -206,9 +214,9 @@ export function UserDropdown() {
                     >
                       <div className="flex items-center gap-3">
                         <span className="text-lg">{icon}</span>
-                        <span className="text-[15px]">{name}</span>
+                        <span className="text-[15px] text-slate-700 dark:text-slate-300">{name}</span>
                       </div>
-                      {currentUserRole === name && <Check className="w-4 h-4 text-[#ff6c00]" strokeWidth={3} />}
+                      {currentUserRole === name && <Check className="w-4 h-4 text-white" strokeWidth={3} />}
                     </button>
                   ))}
                 </div>
