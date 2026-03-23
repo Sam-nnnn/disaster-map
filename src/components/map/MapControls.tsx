@@ -5,7 +5,7 @@ import { Plus, Minus, Crosshair, Layers, Maximize2 } from "lucide-react";
 import { useUIStore } from "@/store/useUIStore";
 import { useTaskStore } from "@/store/useTaskStore";
 import L from "leaflet";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 
 export function MapControls() {
   const map = useMap();
@@ -13,6 +13,15 @@ export function MapControls() {
   const { tasks } = useTaskStore();
   const [showToast, setShowToast] = useState(false);
   const [layerMenuOpen, setLayerMenuOpen] = useState(false);
+
+  const controlsRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (controlsRef.current) {
+      L.DomEvent.disableClickPropagation(controlsRef.current);
+      L.DomEvent.disableScrollPropagation(controlsRef.current);
+    }
+  }, []);
 
   const handleFitAll = () => {
     if (tasks.length === 0) return;
@@ -26,7 +35,7 @@ export function MapControls() {
   };
 
   return (
-    <div className="absolute right-4 bottom-8 z-[1000] flex flex-col gap-2.5 pointer-events-auto">
+    <div ref={controlsRef} className="absolute right-4 bottom-8 z-[1000] flex flex-col gap-2.5 pointer-events-auto">
       <button
         onClick={() => {
           map.locate().on("locationfound", (e) => {
