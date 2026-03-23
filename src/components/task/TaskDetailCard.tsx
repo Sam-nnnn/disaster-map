@@ -66,7 +66,7 @@ export function TaskDetailCard() {
     <div className="fixed inset-0 z-[2000] flex items-end sm:items-center justify-center sm:justify-end sm:pr-4 pointer-events-none sm:bg-transparent transition-all">
       <div
         key={task.id}
-        className="relative w-full h-[50vh] sm:h-auto sm:max-h-[85vh] sm:w-[380px] bg-white dark:bg-slate-900 sm:rounded-2xl rounded-t-3xl shadow-xl overflow-hidden animate-in slide-in-from-bottom-full sm:slide-in-from-right-8 duration-300 flex flex-col pointer-events-auto"
+        className="relative w-full h-[50vh] sm:h-auto sm:max-h-[85vh] sm:w-[380px] bg-white dark:bg-slate-900 sm:rounded-2xl rounded-t-2xl shadow-xl overflow-hidden animate-in slide-in-from-bottom-full sm:slide-in-from-right-8 duration-300 flex flex-col pointer-events-auto"
       >
 
         {/* Sheet Handle (mobile only) */}
@@ -75,7 +75,7 @@ export function TaskDetailCard() {
         </div>
 
         {/* Header */}
-        <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800 bg-slate-50/50 dark:bg-slate-800/50">
+        <div className="flex items-center justify-between p-4 border-b border-slate-100 dark:border-slate-800">
           <div className="flex items-center gap-2 min-w-0">
             <span className="text-2xl shrink-0">{TYPE_ZH[task.type]?.split(' ')[0] || '📍'}</span>
             <h2 className="text-base font-bold text-slate-800 dark:text-slate-100 truncate">{task.title}</h2>
@@ -98,7 +98,7 @@ export function TaskDetailCard() {
           <div className="flex flex-wrap gap-2">
             <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${urgency.className}`}>{urgency.label}</span>
             <span className={`px-2.5 py-1 rounded-full text-xs font-bold ${status.className}`}>{status.label}</span>
-            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100 text-slate-600 dark:bg-slate-800 dark:text-slate-300">{TYPE_ZH[task.type] || task.type}</span>
+            <span className="px-2.5 py-1 rounded-full text-xs font-bold bg-slate-100/80 text-slate-600 dark:bg-slate-800/20 dark:text-slate-300">{TYPE_ZH[task.type] || task.type}</span>
           </div>
 
           {/* Description */}
@@ -121,11 +121,11 @@ export function TaskDetailCard() {
               </div>
             )}
             <div className="grid grid-cols-2 gap-2">
-              <div className="bg-white dark:bg-slate-900 rounded-xl p-2.5 border border-slate-100 dark:border-slate-800">
+              <div className="bg-white/80 dark:bg-slate-900/80 rounded-xl p-2.5 border border-slate-100 dark:border-slate-800">
                 <p className="text-[10px] text-slate-400 mb-0.5">緯度</p>
                 <p className="text-sm font-mono font-bold text-slate-700 dark:text-slate-200">{task.lat.toFixed(4)}</p>
               </div>
-              <div className="bg-white dark:bg-slate-900 rounded-xl p-2.5 border border-slate-100 dark:border-slate-800">
+              <div className="bg-white/80 dark:bg-slate-900/80 rounded-xl p-2.5 border border-slate-100 dark:border-slate-800">
                 <p className="text-[10px] text-slate-400 mb-0.5">經度</p>
                 <p className="text-sm font-mono font-bold text-slate-700 dark:text-slate-200">{task.lng.toFixed(4)}</p>
               </div>
@@ -146,7 +146,7 @@ export function TaskDetailCard() {
           )}
         </div>
 
-        <div className="p-4 border-t border-slate-100 dark:border-slate-800 bg-white dark:bg-slate-900">
+        <div className="p-4 border-t border-slate-100 dark:border-slate-800">
           <button className="w-full flex items-center justify-center py-3 rounded-xl border border-slate-200 dark:border-slate-700 text-slate-800 dark:text-slate-200 font-medium transition-colors hover:bg-slate-50 dark:hover:bg-slate-800">
             我能前往協助
           </button>
