@@ -90,10 +90,10 @@ export function UserDropdown() {
       {/* ✅ Avatar */}
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className={`w-12 h-12 rounded-full 
+        className={`w-13 h-13 rounded-full 
           ${avatarBg}
           bg-cover bg-center
-          border border-white border-1 dark:border-slate-700  
+          border border-white border-4 dark:border-slate-700  
           shadow-xl flex items-center justify-center
           hover:bg-blue-100/70 dark:hover:bg-slate-700 transition-colors`}
       />
