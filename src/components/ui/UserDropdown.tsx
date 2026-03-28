@@ -11,7 +11,7 @@ import { useTheme } from "next-themes";
 import { motion, AnimatePresence } from "framer-motion";
 
 const ROLES = [
-  { name: "預設", icon: "" }, // ✅ 新增預設
+  { name: "未設定角色", icon: "👤" }, // ✅ 新增預設
   { name: "指揮所", icon: "🎖️" },
   { name: "災民", icon: "🏡" },
   { name: "救難隊", icon: "🆘" },
@@ -50,7 +50,8 @@ export function UserDropdown() {
   const currentRoleName =
     currentUserRole && currentUserRole !== ""
       ? currentUserRole
-      : "預設";
+      : "未設定角色";
+  const isDefaultRole = currentRoleName === "未設定角色";
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -70,7 +71,7 @@ export function UserDropdown() {
 
   const handleRoleSelect = (role: string) => {
     // ✅ 選「預設」→ 清空
-    if (role === "預設") {
+    if (role === "未設定角色") {
       setCurrentUserRole("");
     } else {
       setCurrentUserRole(role);
@@ -117,19 +118,22 @@ export function UserDropdown() {
 
         {/* ✅ 角色名稱 badge（永遠顯示） */}
         <div
-          className="
-            hidden sm:flex
-            absolute -bottom-3 left-1/2 -translate-x-1/2
-            min-w-[28px] h-5 px-1
-            rounded-full
-            bg-white dark:bg-slate-800
-            border border-white dark:border-slate-900
-            flex items-center justify-center
-            text-[10px] font-medium text-slate-700 dark:text-slate-100
-            shadow-md
-            whitespace-nowrap
-          "
-        >
+          className={`
+          hidden sm:flex
+          absolute -bottom-3 left-1/2 -translate-x-1/2
+          min-w-[28px] h-5 px-1
+          rounded-full
+          bg-white dark:bg-slate-700
+          border border-white dark:border-slate-900
+          flex items-center justify-center
+          text-[10px] font-medium
+        ${isDefaultRole 
+          ? "text-slate-400 dark:text-slate-400" 
+          : "text-slate-700 dark:text-slate-100"}
+          shadow-md
+          whitespace-nowrap
+        `}
+>
           {currentRoleName}
         </div>
       </div>
